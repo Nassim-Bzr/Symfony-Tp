@@ -3,9 +3,38 @@
 
 {% block title %}{{ annonce.title }}{% endblock %}
 
-{% block body %}
+{% block content %}
     <div class="container mt-5">
-        <h1>{{ annonce.title }}</h1>
-        <p>{{ annonce.description }}</p>
+        <div class="card shadow-lg p-4">
+            <h1 class="display-4 text-center">{{ annonce.title }}</h1>
+            <img class="card-img" src="{{ annonce.image }}" alt="{{ annonce.title }}">
+            <hr class="my-4">
+            <p class="lead">{{ annonce.description }}</p>
+        </div>
     </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .card {
+            background: #f8f9fa;
+        }
+        .display-4 {
+            font-size: 2.5rem;
+            color: #0056b3;
+        }
+        .lead {
+            font-size: 1.25rem;
+        }
+        hr {
+            border-top: 3px solid #bbb;
+        }
+        .card-img {
+            width: 100%; /* Adjust as needed */
+            height: auto; /* Maintains aspect ratio */
+            max-width: 600px; /* Maximum width */
+            display: block; /* Removes inline-block whitespace */
+            margin: auto; /* Aligns image in the center */
+        }
+    </style>
 {% endblock %}

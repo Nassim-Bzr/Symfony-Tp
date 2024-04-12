@@ -9,7 +9,8 @@
             {% for annonce in annonces %}
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="{{ annonce.title }}">
+                        <!-- Utilisation de card-img-top pour l'image -->
+                        <img class="card-img-top" src="{{ annonce.image }}" alt="{{ annonce.title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ annonce.title }}</h5>
                             <p class="card-text">{{ annonce.description|slice(0, 100) ~ '...' }}</p>

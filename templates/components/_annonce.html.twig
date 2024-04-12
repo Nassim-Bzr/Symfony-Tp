@@ -9,6 +9,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ annonce.title }}</h5>
                         <p class="card-text">{{ annonce.description|slice(0, 100) ~ '...' }}</p>
+                        <img class="card-img" src="{{ annonce.image }}" alt="{{ annonce.title }}">
                     </div>
                     <div class="card-footer bg-white text-center">
                         <a href="{{ path('annonce_details', {'id': annonce.id}) }}" class="btn btn-primary">En savoir plus</a>

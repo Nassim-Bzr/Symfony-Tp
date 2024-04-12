@@ -16,9 +16,8 @@ class DefaultController extends AbstractController
     public function home(AnnoncesRepository $annoncesRepository): Response
     {
         #1. Récupération des derniers articles
-        $annonces = $annoncesRepository->findAll();
+        $annonces = $annoncesRepository->findAllOrderedByDateDesc(); // Utilisation de la nouvelle méthode
 
-        #2. Passer a la vue les informations reçues
         return $this->render('default/home.html.twig', [
             'annonces' => $annonces
         ]);
