@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="row">
+        {% for annonce in annonces %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <!-- Image en haut de la carte -->
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="{{ annonce.title }}">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ annonce.title }}</h5>
+                        <p class="card-text">{{ annonce.description|slice(0, 100) ~ '...' }}</p>
+                    </div>
+                    <div class="card-footer bg-white text-center">
+                        <a href="{{ path('annonce_details', {'id': annonce.id}) }}" class="btn btn-primary">En savoir plus</a>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
